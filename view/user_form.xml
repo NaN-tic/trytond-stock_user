@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!-- This file is part of stock_user module for Tryton.
+The COPYRIGHT file at the top level of this repository contains the full
+copyright notices and license terms. -->
+<data>
+    <xpath
+        expr="/form/notebook/page[@id=&quot;preferences&quot;]/field[@name=&quot;language&quot;]"
+        position="after">
+        <label name="stock_warehouse"/>
+        <field name="stock_warehouse" widget="selection"/>
+    </xpath>
+    <xpath expr="/form/notebook/page[@id=&quot;preferences&quot;]"
+            position="after">
+        <page string="Stock" col="2" id="stock">
+            <field name="stock_locations"/>
+        </page>
+    </xpath>
+</data>
