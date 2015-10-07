@@ -10,6 +10,10 @@ msgctxt "field:res.user,stock_warehouse:"
 msgid "Warehouse"
 msgstr "Magatzem"
 
+msgctxt "field:res.user,stock_warehouses:"
+msgid "Warehouses"
+msgstr "Magatzems"
+
 msgctxt "field:res.user-stock_location,create_date:"
 msgid "Create Date"
 msgstr "Data creació"
@@ -42,17 +46,69 @@ msgctxt "field:res.user-stock_location,write_uid:"
 msgid "Write User"
 msgstr "Usuari modificació"
 
+msgctxt "field:res.user-warehouse,create_date:"
+msgid "Create Date"
+msgstr "Data creació"
+
+msgctxt "field:res.user-warehouse,create_uid:"
+msgid "Create User"
+msgstr "Usuari creació"
+
+msgctxt "field:res.user-warehouse,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:res.user-warehouse,rec_name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:res.user-warehouse,user:"
+msgid "User"
+msgstr "Usuari"
+
+msgctxt "field:res.user-warehouse,warehouse:"
+msgid "Warehouse"
+msgstr "Magatzem"
+
+msgctxt "field:res.user-warehouse,write_date:"
+msgid "Write Date"
+msgstr "Data modificació"
+
+msgctxt "field:res.user-warehouse,write_uid:"
+msgid "Write User"
+msgstr "Usuari modificació"
+
+msgctxt "field:stock.shipment.in,warehouse_domain:"
+msgid "Wharehouse Domain"
+msgstr "Domini magatzem"
+
+msgctxt "field:stock.shipment.out,warehouse_domain:"
+msgid "Wharehouse Domain"
+msgstr "Domini magatzem"
+
+msgctxt "field:stock.shipment.out.return,warehouse_domain:"
+msgid "Wharehouse Domain"
+msgstr "Domini magatzem"
+
 msgctxt "help:res.user,stock_locations:"
-msgid "Default location where user is working on."
-msgstr "Ubicació per defecte en que l'usuari està treballant."
+msgid "Default locations where user can be working on."
+msgstr "Ubicacions per defecte en que l'usuari pot treballar."
 
 msgctxt "help:res.user,stock_warehouse:"
 msgid "Default warehouse where user is working on."
 msgstr "Magatzem per defecte en que l'usuari està treballant."
 
+msgctxt "help:res.user,stock_warehouses:"
+msgid "Default warehouses where user can be working on."
+msgstr "Magatzems per defecte en que l'usuari pot treballar."
+
 msgctxt "model:res.user-stock_location,name:"
 msgid "User - Stock Location"
 msgstr "Usuari - Ubicació"
+
+msgctxt "model:res.user-warehouse,name:"
+msgid "User - Stock Warehouse"
+msgstr "Usuari - Magatzem"
 
 msgctxt "view:res.user:"
 msgid "Stock"
