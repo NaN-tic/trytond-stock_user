@@ -10,6 +10,10 @@ msgctxt "field:res.user,stock_warehouse:"
 msgid "Warehouse"
 msgstr "Almacén"
 
+msgctxt "field:res.user,stock_warehouses:"
+msgid "Warehouses"
+msgstr "Amacenes"
+
 msgctxt "field:res.user-stock_location,create_date:"
 msgid "Create Date"
 msgstr "Fecha creación"
@@ -42,17 +46,69 @@ msgctxt "field:res.user-stock_location,write_uid:"
 msgid "Write User"
 msgstr "Usuario modificación"
 
+msgctxt "field:res.user-warehouse,create_date:"
+msgid "Create Date"
+msgstr "Fecha creación"
+
+msgctxt "field:res.user-warehouse,create_uid:"
+msgid "Create User"
+msgstr "Usuario creación"
+
+msgctxt "field:res.user-warehouse,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:res.user-warehouse,rec_name:"
+msgid "Name"
+msgstr "Nombre"
+
+msgctxt "field:res.user-warehouse,user:"
+msgid "User"
+msgstr "Usuario"
+
+msgctxt "field:res.user-warehouse,warehouse:"
+msgid "Warehouse"
+msgstr "Almacén"
+
+msgctxt "field:res.user-warehouse,write_date:"
+msgid "Write Date"
+msgstr "Fecha modificación"
+
+msgctxt "field:res.user-warehouse,write_uid:"
+msgid "Write User"
+msgstr "Usuario modificación"
+
+msgctxt "field:stock.shipment.in,warehouse_domain:"
+msgid "Wharehouse Domain"
+msgstr "Dominio almacén"
+
+msgctxt "field:stock.shipment.out,warehouse_domain:"
+msgid "Wharehouse Domain"
+msgstr "Dominio almacén"
+
+msgctxt "field:stock.shipment.out.return,warehouse_domain:"
+msgid "Wharehouse Domain"
+msgstr "Dominio almacén"
+
 msgctxt "help:res.user,stock_locations:"
-msgid "Default location where user is working on."
-msgstr "Ubicación por defecto en que el usuario está trabajando."
+msgid "Default locations where user can be working on."
+msgstr "Ubicaciones por defecto en las que el usuario puede trabajar."
 
 msgctxt "help:res.user,stock_warehouse:"
 msgid "Default warehouse where user is working on."
 msgstr "Almacén por defecto en que el usuario está trabajando."
 
+msgctxt "help:res.user,stock_warehouses:"
+msgid "Default warehouses where user can be working on."
+msgstr "Almacenes por defecto en los que el usuario puede trabajar. "
+
 msgctxt "model:res.user-stock_location,name:"
 msgid "User - Stock Location"
 msgstr "Usuario - Ubicación"
+
+msgctxt "model:res.user-warehouse,name:"
+msgid "User - Stock Warehouse"
+msgstr "Usuario - Almacén"
 
 msgctxt "view:res.user:"
 msgid "Stock"
