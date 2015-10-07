@@ -3,20 +3,25 @@
 #the full copyright notices and license terms.
 from trytond.model import fields, ModelSQL
 from trytond.pool import PoolMeta
+from trytond.pyson import Eval
 
-__all__ = ['User', 'UserStockLocation']
+__all__ = ['User', 'UserStockWarehouse', 'UserStockLocation']
 __metaclass__ = PoolMeta
 
 
 class User:
     __name__ = "res.user"
-    stock_warehouse = fields.Many2One('stock.location', "Warehouse",
+    stock_warehouses = fields.Many2Many('res.user-warehouse', 'user',
+        'warehouse', 'Warehouses',
         domain=[('type', '=', 'warehouse')],
+        help='Default warehouses where user can be working on.')
+    stock_warehouse = fields.Many2One('stock.location', "Warehouse",
+        domain=[('id', 'in', Eval('stock_warehouses', []))],
         help='Default warehouse where user is working on.')
     stock_locations = fields.Many2Many('res.user-stock_location', 'user',
         'location', 'Locations',
-        domain=[('type', '=', 'storage')],
-        help='Default location where user is working on.')
+        domain=[('parent', 'in', Eval('stock_warehouses', []))],
+        help='Default locations where user can be working on.')
 
     @classmethod
     def __setup__(cls):
@@ -32,6 +37,16 @@ class User:
         if self.stock_warehouse:
             status += ' - %s' % (self.stock_warehouse.rec_name)
         return status
+
+
+class UserStockWarehouse(ModelSQL):
+    'User - Stock Warehouse'
+    __name__ = 'res.user-warehouse'
+    _table = 'res.user_warehouse'
+    warehouse = fields.Many2One('stock.location', 'Warehouse',
+        ondelete='CASCADE', select=True, required=True)
+    user = fields.Many2One('res.user', 'User', ondelete='RESTRICT',
+        select=True, required=True)
 
 
 class UserStockLocation(ModelSQL):

@@ -12,6 +12,7 @@ copyright notices and license terms. -->
     <xpath expr="/form/notebook/page[@id=&quot;preferences&quot;]"
             position="after">
         <page string="Stock" col="2" id="stock">
+            <field name="stock_warehouses"/>
             <field name="stock_locations"/>
         </page>
     </xpath>
