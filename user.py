@@ -42,7 +42,7 @@ class User:
 class UserStockWarehouse(ModelSQL):
     'User - Stock Warehouse'
     __name__ = 'res.user-warehouse'
-    _table = 'res.user_warehouse'
+    _table = 'res_user_warehouse'
     warehouse = fields.Many2One('stock.location', 'Warehouse',
         ondelete='CASCADE', select=True, required=True)
     user = fields.Many2One('res.user', 'User', ondelete='RESTRICT',
