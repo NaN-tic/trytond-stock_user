@@ -29,6 +29,7 @@ class User:
         cls._preferences_fields.extend([
                 'stock_warehouse',
                 ])
+        cls._context_fields.insert(0, 'stock_warehouses')
         cls._context_fields.insert(0, 'stock_warehouse')
         cls._context_fields.insert(0, 'stock_locations')
 
