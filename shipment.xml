@@ -4,7 +4,6 @@ The COPYRIGHT file at the top level of this repository contains the full
 copyright notices and license terms. -->
 <tryton>
     <data>
-
         <!-- stock.shipment.in -->
         <record model="ir.ui.view" id="shipment_in_view_tree">
             <field name="model">stock.shipment.in</field>
@@ -16,7 +15,7 @@ copyright notices and license terms. -->
 
         <record model="ir.action.act_window" id="stock.act_shipment_in_form">
             <field name="search_value"></field>
-            <field name="domain">[('warehouse', '=',  Eval('context', {}).get('stock_warehouse', -1))]</field>
+            <field name="domain">[('warehouse', 'in',  Eval('context', {}).get('stock_warehouses_user'))]</field>
         </record>
 
         <!-- stock.shipment.out -->
@@ -30,7 +29,7 @@ copyright notices and license terms. -->
 
         <record model="ir.action.act_window" id="stock.act_shipment_out_form">
             <field name="search_value"></field>
-            <field name="domain">[('warehouse', '=',  Eval('context', {}).get('stock_warehouse', -1))]</field>
+            <field name="domain">[('warehouse', 'in', Eval('context', {}).get('stock_warehouses_user'))]</field>
         </record>
 
         <!-- stock.shipment.out.return -->
@@ -44,8 +43,7 @@ copyright notices and license terms. -->
 
         <record model="ir.action.act_window" id="stock.act_shipment_out_return_form">
             <field name="search_value"></field>
-            <field name="domain">[('warehouse', '=',  Eval('context', {}).get('stock_warehouse', -1))]</field>
+            <field name="domain">[('warehouse', 'in',  Eval('context', {}).get('stock_warehouses_user'))]</field>
         </record>
-
     </data>
 </tryton>
