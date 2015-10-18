@@ -2,7 +2,7 @@
 #The COPYRIGHT file at the top level of this repository contains
 #the full copyright notices and license terms.
 from trytond.model import fields, ModelSQL
-from trytond.pool import PoolMeta
+from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Eval
 
 __all__ = ['User', 'UserStockWarehouse', 'UserStockLocation']
@@ -15,8 +15,11 @@ class User:
         'warehouse', 'Warehouses',
         domain=[('type', '=', 'warehouse')],
         help='Default warehouses where user can be working on.')
+    stock_warehouses_user = fields.Function(fields.Many2Many('stock.location',
+        None, None, 'Warehouses User', states={'invisible': False}),
+        'on_change_with_stock_warehouses_user')
     stock_warehouse = fields.Many2One('stock.location', "Warehouse",
-        domain=[('id', 'in', Eval('stock_warehouses', []))],
+        domain=[('id', 'in', Eval('stock_warehouses_user', []))],
         help='Default warehouse where user is working on.')
     stock_locations = fields.Many2Many('res.user-stock_location', 'user',
         'location', 'Locations',
@@ -29,7 +32,7 @@ class User:
         cls._preferences_fields.extend([
                 'stock_warehouse',
                 ])
-        cls._context_fields.insert(0, 'stock_warehouses')
+        cls._context_fields.insert(0, 'stock_warehouses_user')
         cls._context_fields.insert(0, 'stock_warehouse')
         cls._context_fields.insert(0, 'stock_locations')
 
@@ -38,6 +41,15 @@ class User:
         if self.stock_warehouse:
             status += ' - %s' % (self.stock_warehouse.rec_name)
         return status
+
+    @fields.depends('stock_warehouses')
+    def on_change_with_stock_warehouses_user(self, name):
+        # if user have not warehouses, can view all warehouses
+        Location = Pool().get('stock.location')
+        if self.stock_warehouses:
+            return [w.id for w in self.stock_warehouses]
+        warehouses = Location.search([('type', '=', 'warehouse')])
+        return [w.id for w in warehouses]
 
 
 class UserStockWarehouse(ModelSQL):
