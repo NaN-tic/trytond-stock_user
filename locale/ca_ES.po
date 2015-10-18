@@ -78,18 +78,6 @@ msgctxt "field:res.user-warehouse,write_uid:"
 msgid "Write User"
 msgstr "Usuari modificació"
 
-msgctxt "field:stock.shipment.in,warehouse_domain:"
-msgid "Wharehouse Domain"
-msgstr "Domini magatzem"
-
-msgctxt "field:stock.shipment.out,warehouse_domain:"
-msgid "Wharehouse Domain"
-msgstr "Domini magatzem"
-
-msgctxt "field:stock.shipment.out.return,warehouse_domain:"
-msgid "Wharehouse Domain"
-msgstr "Domini magatzem"
-
 msgctxt "help:res.user,stock_locations:"
 msgid "Default locations where user can be working on."
 msgstr "Ubicacions per defecte en que l'usuari pot treballar."

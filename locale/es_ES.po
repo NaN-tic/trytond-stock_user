@@ -78,18 +78,6 @@ msgctxt "field:res.user-warehouse,write_uid:"
 msgid "Write User"
 msgstr "Usuario modificación"
 
-msgctxt "field:stock.shipment.in,warehouse_domain:"
-msgid "Wharehouse Domain"
-msgstr "Dominio almacén"
-
-msgctxt "field:stock.shipment.out,warehouse_domain:"
-msgid "Wharehouse Domain"
-msgstr "Dominio almacén"
-
-msgctxt "field:stock.shipment.out.return,warehouse_domain:"
-msgid "Wharehouse Domain"
-msgstr "Dominio almacén"
-
 msgctxt "help:res.user,stock_locations:"
 msgid "Default locations where user can be working on."
 msgstr "Ubicaciones por defecto en las que el usuario puede trabajar."
