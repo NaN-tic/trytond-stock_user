@@ -12,7 +12,7 @@ msgstr "Almacén"
 
 msgctxt "field:res.user,stock_warehouses:"
 msgid "Warehouses"
-msgstr "Amacenes"
+msgstr "Almacenes"
 
 msgctxt "field:res.user-stock_location,create_date:"
 msgid "Create Date"
