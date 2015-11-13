@@ -7,7 +7,7 @@ copyright notices and license terms. -->
         <!-- stock.shipment.in -->
         <record model="ir.ui.view" id="shipment_in_view_tree">
             <field name="model">stock.shipment.in</field>
-            <field name="type">tree</field>
+            <field name="type" eval="None"/>
             <field name="inherit"
                 ref="stock.shipment_in_view_tree"/>
             <field name="name">shipment_in_tree</field>
@@ -23,7 +23,7 @@ copyright notices and license terms. -->
         <!-- stock.shipment.out -->
         <record model="ir.ui.view" id="shipment_out_view_tree">
             <field name="model">stock.shipment.out</field>
-            <field name="type">tree</field>
+            <field name="type" eval="None"/>
             <field name="inherit"
                 ref="stock.shipment_out_view_tree"/>
             <field name="name">shipment_out_tree</field>
@@ -39,7 +39,7 @@ copyright notices and license terms. -->
         <!-- stock.shipment.out.return -->
         <record model="ir.ui.view" id="shipment_out_return_view_tree">
             <field name="model">stock.shipment.out.return</field>
-            <field name="type">tree</field>
+            <field name="type" eval="None"/>
             <field name="inherit"
                 ref="stock.shipment_out_return_view_tree"/>
             <field name="name">shipment_out_return_tree</field>
