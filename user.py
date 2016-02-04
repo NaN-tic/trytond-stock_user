@@ -45,7 +45,7 @@ class User:
         return status
 
     @fields.depends('stock_warehouses')
-    def on_change_with_stock_warehouses_user(self, name):
+    def on_change_with_stock_warehouses_user(self, name=None):
         # if user have not warehouses, can view all warehouses
         Location = Pool().get('stock.location')
         if self.stock_warehouses:
