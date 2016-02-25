@@ -16,7 +16,7 @@ copyright notices and license terms. -->
         <record model="ir.action.act_window" id="stock.act_shipment_in_form">
             <field name="search_value"></field>
             <field name="domain"
-                eval="[('warehouse', 'in',  Eval('context', {}).get('stock_warehouses_user'))]"
+                eval="[('warehouse', 'in', Eval('context', {}).get('stock_warehouses_user'))]"
                 pyson="1"/>
         </record>
 
@@ -48,7 +48,7 @@ copyright notices and license terms. -->
         <record model="ir.action.act_window" id="stock.act_shipment_out_return_form">
             <field name="search_value"></field>
             <field name="domain"
-                eval="[('warehouse', 'in',  Eval('context', {}).get('stock_warehouses_user'))]"
+                eval="[('warehouse', 'in', Eval('context', {}).get('stock_warehouses_user'))]"
                 pyson="1"/>
         </record>
     </data>
