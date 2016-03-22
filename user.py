@@ -24,8 +24,6 @@ class User:
         help='Default warehouse where user is working on.')
     stock_locations = fields.Many2Many('res.user-stock_location', 'user',
         'location', 'Locations',
-        domain=[('parent', 'in', Eval('stock_warehouses', []))],
-        depends=['stock_warehouses'],
         help='Default locations where user can be working on.')
 
     @classmethod
