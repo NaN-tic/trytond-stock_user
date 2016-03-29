@@ -6,10 +6,10 @@ from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Eval
 
 __all__ = ['User', 'UserStockWarehouse', 'UserStockLocation']
-__metaclass__ = PoolMeta
 
 
 class User:
+    __metaclass__ = PoolMeta
     __name__ = "res.user"
     stock_warehouses = fields.Many2Many('res.user-warehouse', 'user',
         'warehouse', 'Warehouses',

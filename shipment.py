@@ -6,10 +6,10 @@ from trytond.pyson import Eval
 from trytond.transaction import Transaction
 
 __all__ = ['ShipmentIn', 'ShipmentOut', 'ShipmentOutReturn']
-__metaclass__ = PoolMeta
 
 
 class ShipmentIn:
+    __metaclass__ = PoolMeta
     __name__ = 'stock.shipment.in'
 
     @classmethod
@@ -28,6 +28,7 @@ class ShipmentIn:
 
 
 class ShipmentOut:
+    __metaclass__ = PoolMeta
     __name__ = 'stock.shipment.out'
 
     @classmethod
@@ -46,6 +47,7 @@ class ShipmentOut:
 
 
 class ShipmentOutReturn:
+    __metaclass__ = PoolMeta
     __name__ = 'stock.shipment.out.return'
 
     @classmethod
