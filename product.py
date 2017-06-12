@@ -28,7 +28,6 @@ class Product:
     @classmethod
     def search_quantity(cls, name, domain=None):
         Location = Pool().get('stock.location')
-
         context = Transaction().context
         # not locations in context
         if not context.get('locations') and context.get('stock_warehouse'):
@@ -37,4 +36,4 @@ class Product:
             with Transaction().set_context(locations=location_ids):
                 return cls._search_quantity(name, location_ids, domain)
         # return super (with locations in context)
-        return super(Product, cls).search_quantity(name, domain=None)
+        return super(Product, cls).search_quantity(name, domain)
