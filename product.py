@@ -20,8 +20,9 @@ class Product:
         if not context.get('locations') and context.get('stock_warehouse'):
             warehouse = Location(context['stock_warehouse'])
             location_ids = [warehouse.storage_location.id, warehouse.input_location.id]
+            product_ids = map(int, products)
             with Transaction().set_context(locations=location_ids):
-                return cls._get_quantity(products, name, location_ids, products)
+                return cls._get_quantity(products, name, location_ids, grouping_filter=(product_ids,))
         # return super (with locations in context)
         return super(Product, cls).get_quantity(products, name)
 
