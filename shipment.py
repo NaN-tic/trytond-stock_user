@@ -8,8 +8,7 @@ from trytond.transaction import Transaction
 __all__ = ['ShipmentIn', 'ShipmentOut', 'ShipmentOutReturn']
 
 
-class ShipmentIn:
-    __metaclass__ = PoolMeta
+class ShipmentIn(metaclass=PoolMeta):
     __name__ = 'stock.shipment.in'
 
     @classmethod
@@ -27,8 +26,7 @@ class ShipmentIn:
             return user.stock_warehouse.id
 
 
-class ShipmentOut:
-    __metaclass__ = PoolMeta
+class ShipmentOut(metaclass=PoolMeta):
     __name__ = 'stock.shipment.out'
 
     @classmethod
@@ -46,8 +44,7 @@ class ShipmentOut:
             return user.stock_warehouse.id
 
 
-class ShipmentOutReturn:
-    __metaclass__ = PoolMeta
+class ShipmentOutReturn(metaclass=PoolMeta):
     __name__ = 'stock.shipment.out.return'
 
     @classmethod

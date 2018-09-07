@@ -7,8 +7,7 @@ from trytond.transaction import Transaction
 __all__ = ['Product']
 
 
-class Product:
-    __metaclass__ = PoolMeta
+class Product(metaclass=PoolMeta):
     __name__ = 'product.product'
 
     @classmethod
@@ -20,7 +19,7 @@ class Product:
         if not context.get('locations') and context.get('stock_warehouse'):
             warehouse = Location(context['stock_warehouse'])
             location_ids = [warehouse.storage_location.id, warehouse.input_location.id]
-            product_ids = map(int, products)
+            product_ids = list(map(int, products))
             with Transaction().set_context(locations=location_ids):
                 return cls._get_quantity(products, name, location_ids, grouping_filter=(product_ids,))
         # return super (with locations in context)
