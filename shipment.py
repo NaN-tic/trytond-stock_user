@@ -5,8 +5,6 @@ from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Eval
 from trytond.transaction import Transaction
 
-__all__ = ['ShipmentIn', 'ShipmentOut', 'ShipmentOutReturn']
-
 
 class ShipmentIn(metaclass=PoolMeta):
     __name__ = 'stock.shipment.in'

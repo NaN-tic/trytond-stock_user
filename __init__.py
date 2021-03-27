@@ -2,18 +2,18 @@
 # The COPYRIGHT file at the top level of this repository contains
 # the full copyright notices and license terms.
 from trytond.pool import Pool
-from .user import *
-from .product import *
-from .shipment import *
+from . import user
+from . import product
+from . import shipment
 
 
 def register():
     Pool.register(
-        User,
-        UserStockWarehouse,
-        UserStockLocation,
-        Product,
-        ShipmentIn,
-        ShipmentOut,
-        ShipmentOutReturn,
+        user.User,
+        user.UserStockWarehouse,
+        user.UserStockLocation,
+        product.Product,
+        shipment.ShipmentIn,
+        shipment.ShipmentOut,
+        shipment.ShipmentOutReturn,
         module='stock_user', type_='model')
