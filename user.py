@@ -54,9 +54,9 @@ class UserStockWarehouse(ModelSQL):
     __name__ = 'res.user-warehouse'
     _table = 'res_user_warehouse'
     warehouse = fields.Many2One('stock.location', 'Warehouse',
-        ondelete='CASCADE', select=True, required=True)
+        ondelete='CASCADE', required=True)
     user = fields.Many2One('res.user', 'User', ondelete='RESTRICT',
-        select=True, required=True)
+        required=True)
 
 
 class UserStockLocation(ModelSQL):
@@ -64,6 +64,6 @@ class UserStockLocation(ModelSQL):
     __name__ = 'res.user-stock_location'
     _table = 'res_user_stock_location'
     location = fields.Many2One('stock.location', 'Location',
-        ondelete='CASCADE', select=True, required=True)
+        ondelete='CASCADE', required=True)
     user = fields.Many2One('res.user', 'User', ondelete='RESTRICT',
-        select=True, required=True)
+        required=True)
