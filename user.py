@@ -17,7 +17,6 @@ class User(metaclass=PoolMeta):
         'on_change_with_stock_warehouses_user')
     stock_warehouse = fields.Many2One('stock.location', "Warehouse",
         domain=[('id', 'in', Eval('stock_warehouses_user', []))],
-        depends=['stock_warehouses_user'],
         help='Default warehouse where user is working on.')
     stock_locations = fields.Many2Many('res.user-stock_location', 'user',
         'location', 'Locations',
