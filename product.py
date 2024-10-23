@@ -31,13 +31,19 @@ class Product(metaclass=PoolMeta):
 
     @classmethod
     def search_quantity(cls, name, domain=None):
-        Location = Pool().get('stock.location')
+        pool = Pool()
+        Location = pool.get('stock.location')
+        Date = pool.get('ir.date')
+
+        stock_date = Date.today() if name == 'product' else datetime.date.max
         context = Transaction().context
-        # not locations in context
+
+        # not locations + stock_warehouse in context
         if not context.get('locations') and context.get('stock_warehouse'):
             warehouse = Location(context['stock_warehouse'])
             location_ids = [warehouse.storage_location.id, warehouse.input_location.id]
-            with Transaction().set_context(locations=location_ids):
+            with Transaction().set_context(locations=location_ids,
+                    stock_date_end=stock_date, with_childs=True):
                 return cls._search_quantity(name, location_ids, domain)
         # return super (with locations in context)
         return super(Product, cls).search_quantity(name, domain)
