@@ -21,7 +21,10 @@ class Product(metaclass=PoolMeta):
         # not locations + stock_warehouse in context
         if not context.get('locations') and context.get('stock_warehouse'):
             warehouse = Location(context['stock_warehouse'])
-            location_ids = [warehouse.storage_location.id, warehouse.input_location.id]
+            location_ids = [warehouse.storage_location.id]
+            if name != 'quantity':
+                location_ids.append(warehouse.input_location.id)
+
             product_ids = list(map(int, products))
             with Transaction().set_context(locations=location_ids,
                     stock_date_end=stock_date, with_childs=True):
@@ -41,7 +44,10 @@ class Product(metaclass=PoolMeta):
         # not locations + stock_warehouse in context
         if not context.get('locations') and context.get('stock_warehouse'):
             warehouse = Location(context['stock_warehouse'])
-            location_ids = [warehouse.storage_location.id, warehouse.input_location.id]
+            location_ids = [warehouse.storage_location.id]
+            if name != 'quantity':
+                location_ids.append(warehouse.input_location.id)
+
             with Transaction().set_context(locations=location_ids,
                     stock_date_end=stock_date, with_childs=True):
                 return cls._search_quantity(name, location_ids, domain)
